@@ -1,0 +1,33 @@
+{
+  "ver" : "1.0",
+  "form" : "1110",
+  "assets" : "987",
+  "scores" : [
+      {
+      "type" : "Skill",
+      "value" : 82.26
+    },
+      {
+      "type" : "Learning",
+      "value" : 83.45
+    },
+      {
+      "type" : "Management",
+      "value" : 84.64
+    },
+      {
+      "type" : "Productivity",
+      "value" : 85.83
+    },
+      {
+      "type" : "Growing",
+      "value" : 87.02
+    },
+      {
+      "type" : "Compatibility",
+      "value" : 88.21
+    }
+  ],
+  "modified" : 1566371163739,
+  "signature" : "Hoge:Fuga"
+}

@@ -1,0 +1,117 @@
+{
+  "ver" : "1.0",
+  "id" : "123",
+  "policies" : [
+      {
+      "name" : "Id",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.0
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.0
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.0
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.0
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.0
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.0
+        }
+      ]
+    },
+      {
+      "name" : "Age",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.02
+        }
+      ]
+    },
+      {
+      "name" : "Nationality",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.02
+        }
+      ]
+    },
+      {
+      "name" : "Language",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.11
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.12
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.13
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.14
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.15
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.16
+        }
+      ]
+    }
+  ],
+  "modified" : 0,
+  "expires" : 1566286427151,
+  "signature" : "Hoge"
+}

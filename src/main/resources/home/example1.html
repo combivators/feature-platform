@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset='utf-8'>
+    <title>SVG3DTagCloud - Example</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <!--
+    <script src='http://localhost:8080/v1/api/js?q=svg3dtagcloud&t=min'></script>
+    -->
+    <script src='/js/jquery.svg3dtagcloud.js'></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <style type='text/css'>
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, font, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background-color: #FFF;
+        }
+
+    </style>
+    <!--
+    <script src='http://localhost:8080/v1/api/js?t=token&r=480&s=0.2&bc=fff&fc=111&tc=111'></script>
+    -->
+    <script>
+
+    	$( document ).ready( function() {
+
+            var entries = [
+
+                { image: './img/ic_user_male.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Lorem ipsum' },
+                { image: './img/ic_user_male.svg', width: '40', height: '40', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Dolor sit amet' },
+                { image: './img/ic_user_male.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Consetetur sadipscing' },
+                { image: './img/ic_user_female.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Sed diam' },
+                { image: './img/ic_user_female.svg', width: '40', height: '40', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'At vero' },
+                { image: './img/ic_user_female.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Nonumy eirmod' },
+                { image: './img/ic_user_male2.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Stet clita' },
+                { image: './img/ic_user_male2.svg', width: '40', height: '40', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Justo duo' },
+                { image: './img/ic_user_male2.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Ut wisi enim' },
+                { image: './img/ic_user_female2.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Minim veniam' },
+                { image: './img/ic_user_female2.svg', width: '40', height: '40', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Quis nostrud' },
+                { image: './img/ic_user_female2.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Exerci tation' },
+                { image: './img/ic_account.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Duis autem' },
+                { image: './img/ic_account.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Vel eum iriure' },
+                { image: './img/ic_amazon.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Dolor in hendrerit' },
+                { image: './img/ic_amazon.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'In vulputate' },
+                { image: './img/ic_cloud.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Velit esse' },
+                { image: './img/ic_cloud.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Molestie consequat' },
+                { image: './img/ic_facebook.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Vel illum' },
+                { image: './img/ic_facebook.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Dolore eu' },
+                { image: './img/ic_github.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Feugiat nulla' },
+                { image: './img/ic_github.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Facilisis at vero' },
+                { image: './img/ic_google.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Eros et accumsa' },
+                { image: './img/ic_google.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Et iusto odio' },
+                { image: './img/ic_linkedin.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Dignissim qui' },
+                { image: './img/ic_linkedin.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Blandit praesent' },
+                { image: './img/ic_slideshare.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Nam liber' },
+                { image: './img/ic_slideshare.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Soluta nobis' },
+                { image: './img/ic_tackoverflow.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Magna aliquam' },
+                { image: './img/ic_telegram.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Duis autem' },
+                { image: './img/ic_telegram.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Lori novis' },
+                { image: './img/ic_twitter.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Meno eqiam' },
+                { image: './img/ic_twitter.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Meno equox' },
+                { image: './img/ic_user_avatar.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Iri orem' },
+                { image: './img/ic_user_avatar.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Orel pas' },
+                { image: './img/ic_yahoo.svg', width: '30', height: '30', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Psi sit' },
+                { image: './img/ic_yahoo.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Amet et quam' },
+                { image: './img/ic_baidu.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Molare cons' },
+                { image: './img/ic_line.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Digi tal' },
+                { image: './img/ic_messenge.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Felenope liber' },
+                { image: './img/ic_webchat.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Officia dolor' },
+                { image: './img/ic_whatsapp.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Autem insto' },
+                { image: './img/ic_circle.svg', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Veniam isictus' }
+
+            ];
+
+            var settings = {
+
+                entries: entries,
+                width: 480,
+                height: 480,
+                radius: '75%',
+                radiusMin: 75,
+                bgDraw: true,
+                bgColor: '#FFF',
+                //透明度设置
+                opacityOver: 1.00,
+                opacityOut: 0.05,
+                opacitySpeed: 6,
+                //最小缩放因子
+                scaling: 0.60,
+                fov: 800,
+                speed: 0.2,
+                fontFamily: 'Oswald, Arial, sans-serif',
+                fontSize: '15',
+                fontColor: '#111',
+                fontWeight: 'normal',//bold
+                fontStyle: 'normal',//italic
+                fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                fontToUpperCase: true,
+                tooltipFontFamily: 'Oswald, Arial, sans-serif',
+                tooltipFontSize: '11',
+                tooltipFontColor: '#111',
+                tooltipFontWeight: 'normal',//bold
+                tooltipFontStyle: 'normal',//italic
+                tooltipFontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                tooltipFontToUpperCase: false,
+                tooltipTextAnchor: 'left',
+                tooltipDiffX: 0,
+                tooltipDiffY: 10,
+                lineDraw: true
+
+            };
+
+            //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+            $( '#holder' ).svg3DTagCloud( settings );
+
+		} );
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id='holder'></div>
+
+</body>

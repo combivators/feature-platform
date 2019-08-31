@@ -1,0 +1,79 @@
+{
+  "id" : "987",
+  "assets" : [
+      {
+      "name" : "Id",
+      "score" : 0.0
+    },
+      {
+      "name" : "Sex",
+      "score" : 51.0
+    },
+      {
+      "name" : "Age",
+      "score" : 52.0
+    },
+      {
+      "name" : "Nationality",
+      "score" : 53.0
+    },
+      {
+      "name" : "Civil",
+      "score" : 54.0
+    },
+      {
+      "name" : "Visa",
+      "score" : 55.0
+    },
+      {
+      "name" : "Education",
+      "score" : 56.0
+    },
+      {
+      "name" : "Specialty",
+      "score" : 57.0
+    },
+      {
+      "name" : "Graduation",
+      "score" : 58.0
+    },
+      {
+      "name" : "Income",
+      "score" : 59.0
+    },
+      {
+      "name" : "Certification",
+      "score" : 60.0
+    },
+      {
+      "name" : "Years",
+      "score" : 61.0
+    },
+      {
+      "name" : "Changes",
+      "score" : 62.0
+    },
+      {
+      "name" : "Career",
+      "score" : 63.0
+    },
+      {
+      "name" : "Experience",
+      "score" : 64.0
+    },
+      {
+      "name" : "Duties",
+      "score" : 65.0
+    },
+      {
+      "name" : "Field",
+      "score" : 67.0
+    },
+      {
+      "name" : "Language",
+      "score" : 68.0
+    }
+  ],
+  "modified" : 1566280507894,
+  "signature" : "Fuga"
+}
