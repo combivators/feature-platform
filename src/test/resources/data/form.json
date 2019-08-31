@@ -1,0 +1,531 @@
+{
+  "ver" : "1.0",
+  "id" : "123",
+  "policies" : [
+      {
+      "name" : "Id",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.0
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.0
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.0
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.0
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.0
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.0
+        }
+      ]
+    },
+      {
+      "name" : "Sex",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.01
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.03
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.04
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.05
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.06
+        }
+      ]
+    },
+      {
+      "name" : "Age",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.02
+        }
+      ]
+    },
+      {
+      "name" : "Nationality",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.02
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.02
+        }
+      ]
+    },
+      {
+      "name" : "Civil",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.03
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.03
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.03
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.03
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.03
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.03
+        }
+      ]
+    },
+      {
+      "name" : "Visa",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.04
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.04
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.04
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.04
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.04
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.04
+        }
+      ]
+    },
+      {
+      "name" : "Education",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.05
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.05
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.05
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.05
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.05
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.05
+        }
+      ]
+    },
+      {
+      "name" : "Specialty",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.06
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.06
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.06
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.06
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.06
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.06
+        }
+      ]
+    },
+      {
+      "name" : "Graduation",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.07
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.07
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.07
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.07
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.07
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.07
+        }
+      ]
+    },
+      {
+      "name" : "Income",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.08
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.08
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.08
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.08
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.08
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.08
+        }
+      ]
+    },
+      {
+      "name" : "Certification",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.09
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.09
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.09
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.09
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.09
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.09
+        }
+      ]
+    },
+      {
+      "name" : "Years",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.1
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.1
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.1
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.1
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.1
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.1
+        }
+      ]
+    },
+      {
+      "name" : "Changes",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.11
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.11
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.11
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.11
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.11
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.11
+        }
+      ]
+    },
+      {
+      "name" : "Career",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.12
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.12
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.12
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.12
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.12
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.12
+        }
+      ]
+    },
+      {
+      "name" : "Experience",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.13
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.13
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.13
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.13
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.13
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.13
+        }
+      ]
+    },
+      {
+      "name" : "Duties",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.14
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.14
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.14
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.14
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.14
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.14
+        }
+      ]
+    },
+      {
+      "name" : "Field",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.15
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.15
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.15
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.15
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.15
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.15
+        }
+      ]
+    },
+      {
+      "name" : "Language",
+      "balances" : [
+              {
+          "type" : "Skill",
+          "weight" : 0.11
+        },
+              {
+          "type" : "Learning",
+          "weight" : 0.12
+        },
+              {
+          "type" : "Management",
+          "weight" : 0.13
+        },
+              {
+          "type" : "Productivity",
+          "weight" : 0.14
+        },
+              {
+          "type" : "Growing",
+          "weight" : 0.15
+        },
+              {
+          "type" : "Compatibility",
+          "weight" : 0.16
+        }
+      ]
+    }
+  ],
+  "modified" : 0,
+  "expires" : 1566286427151,
+  "signature" : "Hoge"
+}
