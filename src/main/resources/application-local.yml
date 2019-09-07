@@ -24,7 +24,7 @@ launcher:
     backlog: 10
     stopTimeout: 1
     executor: ${pool}
-    handlers: ${handler.resource}, ${handler.health}, ${handler.sys}, ${handler.rest}, ${handler.demo}
+    handlers: ${handler.resource}, ${handler.health}, ${handler.sys}, ${handler.rest}, ${handler.chart}, ${handler.demo}
 #    ssl:
 #      file:       ks
 #      password:   12345
@@ -56,6 +56,11 @@ handler:
     filters:     ${filter.logger}
     application: ${rest.application}
 #    listener:    ${rest.monitor}
+  chart:
+    class:       net.tiny.feature.svg.ScoreChartService
+    path:        /v1/chart/svg
+    filters:     ${filter.logger}
+
 #
   demo:
     class:   net.tiny.feature.demo.UsersService

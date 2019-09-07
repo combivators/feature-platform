@@ -16,13 +16,12 @@ import net.tiny.config.JsonParser;
 import net.tiny.ws.cache.BarakbCache;
 
 /**
-*
-* 对资历数值进行评估WEB-API
-* 参数id为评价策略表id
-* 输出JSON格式评估结果
-*/
-//API: /v1/assess/{id}
-@Path("/v1")
+ * 数值化资历评估WEB-API
+ * 参数id为评价策略表id
+ * 输出JSON格式评估结果
+ */
+//API: /v1/api/assess/{id}/scores
+@Path("/v1/api/assess")
 public class AssessmentService {
 
     private transient Appraiser appraiser = new Appraiser();
@@ -30,7 +29,7 @@ public class AssessmentService {
     private int cacheSize = -1;
 
     @POST
-    @Path("assess/{id}/scores")
+    @Path("{id}/scores")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Assessment.Scores assess(@PathParam("id") Integer id, @BeanParam Assets.Qualifications qualifications) throws IOException {
