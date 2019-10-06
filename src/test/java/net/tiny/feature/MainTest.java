@@ -15,9 +15,8 @@ import org.junit.jupiter.api.Test;
 
 import net.tiny.boot.ApplicationContext;
 import net.tiny.boot.Main;
-import net.tiny.feature.demo.Users;
 import net.tiny.service.ServiceContext;
-import net.tiny.service.ServiceLocator;
+import net.tiny.feature.demo.Users;
 import net.tiny.ws.Launcher;
 import net.tiny.ws.rs.client.RestClient;
 
@@ -47,9 +46,11 @@ public class MainTest {
         ApplicationContext context = new Main(args).run(false);
         assertEquals("test", context.getProfile());
 
-        ServiceContext locator = ServiceLocator.getInstance();
+        ServiceContext serviceContext = context.getBean("service", ServiceContext.class);
+        assertNotNull(serviceContext);
+        assertNotNull(serviceContext.lookup("launcher", Launcher.class));
         Launcher launcher = context.getBootBean(Launcher.class);
-        launcher = locator.lookup("launcher", Launcher.class);
+
         assertNotNull(launcher);
         Thread.sleep(1500L);
         //assertTrue(launcher.isStarting());

@@ -9,8 +9,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import net.tiny.feature.demo.Users;
 import net.tiny.service.ServiceContext;
+import net.tiny.feature.demo.Users;
 import net.tiny.ws.rs.Roles;
 
 @Path("/v1/api/user")
