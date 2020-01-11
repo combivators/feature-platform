@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- https://segmentfault.com/a/1190000000701184 -->
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery Bootstrap News plugin</title>
+  <!-- load the CSS files in the right order -->
+  <link href="bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="fontawesome-free-5.11.2-web/css/all.min.css" rel="stylesheet" type="text/css">
+  <style>
+li {
+  list-style:none;
+}
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+              <div class="slide-container">
+                <ul class="slide-list js-slide-list">
+                  <li class="odd">
+                    <table cellpadding="4">
+                      <tr>
+                        <td><img src="img/ic_user_female.svg" width="60" class="img-circle" /></td>
+                        <td>We can get the value of text input field using various methods in script. There is a text value property which can set and return the value of the value attribute of a text field...<a href="#">Read more...</a></td>
+                      </tr>
+                    </table>
+                  </li>
+                  <li class="even">
+                    <table cellpadding="4">
+                      <tr>
+                        <td><img src="img/ic_user_green.svg" width="60" class="img-circle" /></td>
+                        <td>We can get the value of text input field using various methods in script. There is a text value property which can set and return the value of the value attribute of a text field...<a href="#">Read more...</a></td>
+                      </tr>
+                    </table>
+                  </li>
+                  <li class="odd">
+                    <table cellpadding="4">
+                      <tr>
+                        <td><img src="img/ic_user_male.svg" width="60" class="img-circle" /></td>
+                        <td>We can get the value of text input field using various methods in script. There is a text value property which can set and return the value of the value attribute of a text field...<a href="#">Read more...</a></td>
+                      </tr>
+                    </table>
+                  </li>
+                  <li class="even">
+                    <table cellpadding="4">
+                      <tr>
+                        <td><img src="img/ic_user_female2.svg"" width="60" class="img-circle" /></td>
+                        <td>We can get the value of text input field using various methods in script. There is a text value property which can set and return the value of the value attribute of a text field...<a href="#">Read more...</a></td>
+                      </tr>
+                    </table>
+                  </li>
+                  <li class="odd">
+                    <table cellpadding="4">
+                      <tr>
+                        <td><img src="img/ic_user_male2.svg" width="60" class="img-circle" /></td>
+                        <td>We can get the value of text input field using various methods in script. There is a text value property which can set and return the value of the value attribute of a text field...<a href="#">Read more...</a></td>
+                      </tr>
+                    </table>
+                  </li>
+                  <li class="even">
+                    <table cellpadding="4">
+                      <tr>
+                        <td><img src="img/ic_office_male.svg" width="60" class="img-circle" /></td>
+                        <td>We can get the value of text input field using various methods in script. There is a text value property which can set and return the value of the value attribute of a text field...<a href="#">Read more...</a></td>
+                      </tr>
+                    </table>
+                  </li>
+                  <li class="odd">
+                    <table cellpadding="4">
+                      <tr>
+                        <td><img src="img/ic_office_girl.svg" width="60" class="img-circle" /></td>
+                        <td>We can get the value of text input field using various methods in script. There is a text value property which can set and return the value of the value attribute of a text field...<a href="#">Read more...</a></td>
+                      </tr>
+                    </table>
+                  </li>
+                </ul>
+          </div> <!-- slide-container -->
+
+
+</div> <!-- container -->
+
+</body>
+<script src="jquery/jquery-3.4.1.min.js"></script>
+<script src="js/jquery.slide.js"></script>
+<script>
+//jquery特效：无缝向上循环滚动列表
+$(function(){
+
+  Slider.rolling({
+    name: 'slide-container',
+    width: '480px',
+    height: '100px',
+    direction: 'top',
+    speed: 50,
+    addcss: true
+  });
+
+/*
+  Slider.rolling({
+    name: 'slide-container',
+    width: '380px',
+    height: '180px',
+    direction: 'bottom',
+    speed: 30,
+    addcss: true
+  });
+
+  Slider.rolling({
+    name: 'slide-container',
+    width: '380px',
+    height: '180px',
+    direction: 'left',
+    speed: 30,
+    addcss: true
+  });
+
+  Slider.rolling({
+    name: 'slide-container',
+    width: '380px',
+    height: '180px',
+    direction: 'right',
+    speed: 40,
+    addcss: true
+  });
+*/
+})
+</script>
+</html>

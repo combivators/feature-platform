@@ -9,7 +9,7 @@
      <style type="text/css">
         <![CDATA[
         line.radial {
-            stroke: #333;
+            stroke: #333333;
             stroke-width: 2pt;
         }
         polygon {
@@ -17,12 +17,12 @@
         }
         svg {
             fill: none;
-            stroke: #777;
+            stroke: #777777;
             stroke-opacity: 1;
             stroke-width: 1pt;
         }
         text {
-            fill: #000;
+            fill: #000000;
             font-family: times, serif;
             font-size: 14pt;
             font-weight: normal;
@@ -41,10 +41,10 @@
             <line class="radial" y2="306" />
         </g>
         <g id="warp" >
-            <circle cx="0" cy="0" r="75" stroke="#ccc" fill="none" />
-            <circle cx="0" cy="0" r="150" stroke="#ccc" fill="none" />
-            <circle cx="0" cy="0" r="225" stroke="#ccc" fill="none" />
-            <circle cx="0" cy="0" r="300" stroke="#ccc" fill="none" />
+            <circle cx="0" cy="0" r="75"  stroke="#CCCCCC" fill="none" />
+            <circle cx="0" cy="0" r="150" stroke="#CCCCCC" fill="none" />
+            <circle cx="0" cy="0" r="225" stroke="#CCCCCC" fill="none" />
+            <circle cx="0" cy="0" r="300" stroke="#CCCCCC" fill="none" />
         </g>
         <g id="scores" >
 %s

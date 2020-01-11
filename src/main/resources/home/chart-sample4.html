@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- http://www.100sucai.com/demos.php?id=1412312318 -->
+<!-- https://github.com/nnnick/Chart.js -->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chart.js ALL-IN-ONE Example</title>
+  <!-- load the CSS files in the right order -->
+  <link href="bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <style>
+canvas{
+  float: left;
+}
+  </style>
+</head>
+<body>
+<div class="container" id="container">
+    <div style="width:600px;height:600px; margin:0px auto;">
+      <canvas id="polarArea" height="300" width="200"></canvas>
+    </div>
+
+</div><!-- container -->
+</body>
+<script src="jquery/jquery-3.4.1.min.js"></script>
+<script src="js/charts.js"></script>
+<script>
+var chartData = [
+{
+  value : Math.random(),
+  color: "#D97041"
+},
+{
+  value : Math.random(),
+  color: "#C7604C"
+},
+{
+  value : Math.random(),
+  color: "#21323D"
+},
+{
+  value : Math.random(),
+  color: "#9D9B7F"
+},
+{
+  value : Math.random(),
+  color: "#7D4F6D"
+},
+{
+  value : Math.random(),
+  color: "#584A5E"
+}
+];
+
+new Chart(document.getElementById("polarArea").getContext("2d")).PolarArea(chartData);
+</script>
+</html>

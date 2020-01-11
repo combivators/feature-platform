@@ -14,18 +14,18 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import net.tiny.feature.demo.Users;
-import net.tiny.feature.model.Entry;
-import net.tiny.feature.model.Settings;
+import net.tiny.feature.matching.api.Entry;
+import net.tiny.feature.matching.api.Settings;
 
 //TODO This is a RESTful sample
-@Path("/v1/api")
+@Path("/v1/api/match")
 public class MatchingService {
 
     @Resource(name="users")
     private Users users;
 
     @GET
-    @Path("match/{query}")
+    @Path("query/{query}")
     @Produces(value = MediaType.APPLICATION_JSON)
     public Settings match(@PathParam("query")String query) {
         System.out.println("##### match query : " + query);

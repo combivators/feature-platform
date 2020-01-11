@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- http://www.100sucai.com/demos.php?id=1412312318 -->
+<!-- https://github.com/nnnick/Chart.js -->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chart Doughnut Example</title>
+  <!-- load the CSS files in the right order -->
+  <link href="bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <style>
+canvas{
+  float: left;
+}
+  </style>
+</head>
+<body>
+<div class="container" id="container">
+    <div style="width:600px;height:600px; margin:0px auto;">
+      <canvas id="doughnut" height="300" width="200"></canvas>
+    </div>
+
+</div><!-- container -->
+</body>
+<script src="jquery/jquery-3.4.1.min.js"></script>
+<script src="js/charts.js"></script>
+<script>
+var doughnutData = [
+  {
+    value: 30,
+    color:"#F7464A"
+  },
+  {
+    value : 50,
+    color : "#46BFBD"
+  },
+  {
+    value : 100,
+    color : "#FDB45C"
+  },
+  {
+    value : 40,
+    color : "#949FB1"
+  },
+  {
+    value : 120,
+    color : "#4D5360"
+  }
+
+];
+new Chart(document.getElementById("doughnut").getContext("2d")).Doughnut(doughnutData);
+</script>
+</html>

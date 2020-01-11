@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!-- https://colorlib.com/etc/bwiz/colorlib-wizard-23/index.html -->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Wizard Step Form</title>
+  <!-- load the CSS files in the right order -->
+  <!--
+  <link href="bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  -->
+  <link href="fontawesome-free-5.11.2-web/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="jquery-ui/1.12.1/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/wizard-23.css" rel="stylesheet" type="text/css" />
+  <style>
+
+  </style>
+</head>
+<body>
+<div class="page-content">
+
+<div class="wizard-v3-content">
+  <div class="wizard-form">
+    <div class="wizard-header">
+      <h3 class="heading">Sign Up Your User Account</h3>
+      <p>Fill all form field to go next step</p>
+    </div><!-- wizard-header -->
+
+    <form class="form-register" action="#" method="post">
+    <div id="form-total">
+      <h2>
+      <span class="step-icon"><i class="fas fa-user"></i></span>
+      <span class="step-text">About</span>
+      </h2>
+    <section>
+    <div class="inner">
+    <h3>Account Information:</h3>
+    <div class="form-row">
+    <div class="form-holder form-holder-2">
+    <label class="form-row-inner">
+    <input type="text" name="email" id="email" class="form-control" required>
+    <span class="label"><i class="fas fa-envelope"></i> Email Address</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-holder form-holder-2">
+    <label class="form-row-inner">
+    <input type="text" class="form-control" id="username" name="username" required>
+    <span class="label"><i class="fas fa-user"></i> Username</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-holder form-holder-2">
+    <label class="form-row-inner">
+    <input type="password" name="password_1" id="password_1" class="form-control" required>
+    <span class="label"><i class="far fa-eye"></i> Password</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-holder form-holder-2">
+    <label class="form-row-inner">
+    <input type="password" name="comfirm_password_1" id="comfirm_password_1" class="form-control" required>
+    <span class="label"><i class="fas fa-eye"></i> Comfirm Password</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <h2>
+    <span class="step-icon"><i class="fas fa-lock"></i></span>
+      <span class="step-text">Personal</span>
+      </h2>
+    <section>
+    <div class="inner">
+    <h3>Personal Information:</h3>
+    <div class="form-row">
+    <div class="form-holder">
+    <label class="form-row-inner">
+    <input type="text" class="form-control" id="first_name" name="first_name" required>
+    <span class="label">First Name*</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    <div class="form-holder">
+    <label class="form-row-inner">
+    <input type="text" class="form-control" id="last_name" name="last_name" required>
+    <span class="label">Last Name*</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    </div>
+    <div class="form-row">
+    <div id="radio">
+    <!--
+    <label><i class="fas fa-restroom"></i> Gender</label>
+    -->
+    <input type="radio" name="gender" value="male" checked class="radio-1"> <i class="fas fa-male fa-lg"></i>
+    <input type="radio" name="gender" value="female"> <i class="fas fa-female fa-lg"></i>
+    </div>
+    </div>
+    <div class="form-row form-row-date">
+    <div class="form-holder form-holder-2">
+    <label for="date" class="special-label"><i class="fas fa-calendar-alt"></i> Date of Birth</label>
+    <select name="date" id="date">
+    <option value="Day" disabled selected>Day</option>
+    <option value="1">1</option>
+    <option value="2">3</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    </select>
+    <select name="month" id="month">
+    <option value="Month" disabled selected>Month</option>
+    <option value="Feb">Feb</option>
+    <option value="Mar">Mar</option>
+    <option value="Apr">Apr</option>
+    <option value="May">May</option>
+    </select>
+    <select name="year" id="year">
+    <option value="Year" disabled selected>Year</option>
+    <option value="2017">2017</option>
+    <option value="2016">2016</option>
+    <option value="2015">2015</option>
+    <option value="2014">2014</option>
+    <option value="2013">2013</option>
+    </select>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-holder form-holder-2">
+    <label class="form-row-inner">
+    <input type="text" class="form-control" id="phone" name="phone" required>
+    <span class="label"><i class="fas fa-phone fa-flip-horizontal"></i> Phone Number</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-holder form-holder-2">
+    <label class="form-row-inner">
+    <input type="text" class="form-control" id="address" name="address" required>
+    <span class="label"><i class="fas fa-map-marker-alt"></i> Address</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <h2>
+    <span class="step-icon"><i class="fas fa-credit-card"></i></span>
+    <span class="step-text">Payment</span>
+    </h2>
+    <section>
+    <div class="inner">
+    <h3>Payment Information:</h3>
+    <div class="form-row">
+    <div class="form-holder form-holder-2">
+    <input type="radio" name="radio1" id="pay-1" value="pay-visa" checked>
+    <label class="pay-1-label" for="pay-1"><i class="fab fa-cc-visa fa-3x" style="color:DodgerBlue"></i></label>
+    <input type="radio" name="radio1" id="pay-2" value="pay-master">
+    <label class="pay-2-label" for="pay-2"><i class="fab fa-cc-mastercard fa-3x" style="color:Tomato"></i></label>
+    <input type="radio" name="radio1" id="pay-3" value="pay-jcb">
+    <label class="pay-3-label" for="pay-3"><i class="fab fa-cc-jcb fa-3x" style="color:Red"></i></label>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-holder form-holder-2">
+    <label class="form-row-inner">
+    <input type="text" class="form-control" id="holder" name="holder" required>
+    <span class="label">Holder Name</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-holder">
+    <label class="form-row-inner">
+    <input type="text" class="form-control" id="card" name="card" required>
+    <span class="label">Card Number</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    <div class="form-holder">
+    <label class="form-row-inner">
+    <input type="text" class="form-control" id="cvc" name="cvc" required>
+    <span class="label">CVC</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-holder">
+    <label class="form-row-inner">
+    <input type="text" class="form-control" id="expiry" name="expiry" required>
+    <span class="label">Expiry Date (Month/Year)</span>
+    <span class="border"></span>
+    </label>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <h2>
+    <span class="step-icon"><i class="fas fa-tasks"></i></span>
+    <span class="step-text">Confirm</span>
+    </h2>
+    <section>
+    <div class="inner">
+    <h3>Confirm Details:</h3>
+    <div class="form-row table-responsive">
+    <table class="table">
+    <tbody>
+    <tr class="space-row">
+    <th><i class="fas fa-user-check fa-lg"></i> </th>
+    <td id="fullname-val"></td>
+    </tr>
+    <tr class="space-row">
+    <th><i class="fas fa-envelope fa-lg"></i> </th>
+    <td id="email-val"></td>
+    </tr>
+    <tr class="space-row">
+    <th><i class="fas fa-phone fa-flip-horizontal fa-lg"></i> </th>
+    <td id="phone-val"></td>
+    </tr>
+    <tr class="space-row">
+    <th><i class="far fa-id-badge fa-lg"></i> </th>
+    <td id="username-val"></td>
+    </tr>
+    <tr class="space-row">
+    <th>Gender:</th>
+    <td id="gender-val"></td>
+    </tr>
+    <tr class="space-row">
+    <th><i class="fas fa-map-marker-alt fa-lg"></i> </th>
+    <td id="address-val"></td>
+    </tr>
+    <tr class="space-row">
+    <th>Card Type:</th>
+    <td id="pay-val">Credit Card</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </section>
+    </div><!-- form-total -->
+    </form>
+
+  </div><!-- wizard-form -->
+</div><!-- wizard-v3-content-->
+
+</div><!-- page-content -->
+</body>
+<script src="jquery/jquery-3.4.1.min.js"></script>
+<script src="jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="jquery-validate/1.19.1/additional-methods.min.js"></script>
+<script src="jquery-steps/1.1.0/jquery.steps.min.js"></script>
+<script src="jquery-ui/1.12.1/jquery-ui.min.js"></script>
+<script src="js/wizard-23.js"></script>
+
+<script>
+</script>
+</html>

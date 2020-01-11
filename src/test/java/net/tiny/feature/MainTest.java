@@ -15,9 +15,8 @@ import org.junit.jupiter.api.Test;
 
 import net.tiny.boot.ApplicationContext;
 import net.tiny.boot.Main;
-import net.tiny.feature.demo.Users;
 import net.tiny.service.ServiceContext;
-import net.tiny.service.ServiceLocator;
+import net.tiny.feature.demo.Users;
 import net.tiny.ws.Launcher;
 import net.tiny.ws.rs.client.RestClient;
 
@@ -47,7 +46,8 @@ public class MainTest {
         ApplicationContext context = new Main(args).run(false);
         assertEquals("test", context.getProfile());
 
-        ServiceContext locator = ServiceLocator.getInstance();
+        ServiceContext locator = context.getBean("rest.service", ServiceContext.class);
+        assertNotNull(locator);
         Launcher launcher = context.getBootBean(Launcher.class);
         launcher = locator.lookup("launcher", Launcher.class);
         assertNotNull(launcher);
@@ -57,7 +57,7 @@ public class MainTest {
 
         RestClient client = new RestClient.Builder()
                 .build();
-        RestClient.Response response = client.doGet(new URL("http://localhost:8080/example1.html"));
+        RestClient.Response response = client.doGet(new URL("http://localhost:8080/icon/favicon.ico"));
         assertEquals(response.getStatus(), HttpURLConnection.HTTP_OK);
         assertTrue(response.getContentLength() > 1);
         response.close();

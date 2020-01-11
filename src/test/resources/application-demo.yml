@@ -1,0 +1,131 @@
+logging:
+  handler:
+    output: file
+    pattern: '/opt/demo/log/demo.log'
+    limit: 5242880
+    count: 3
+  level:
+    javax.xml.bind: WARNING
+    com.sun:     WARNING
+    sun.net:     WARN
+    org.apache:  OFF
+    net.tiny:    DEBUG 
+
+#
+main: ${launcher}
+#shutdown = ${hook}
+daemon: true
+executor: ${pool}
+callback: ${rest.service}
+pool:
+  class:   net.tiny.service.PausableThreadPoolExecutor
+  size:    5
+  max:     10
+  timeout: 3
+launcher:
+  class: net.tiny.ws.Launcher
+  builder:
+    port: 8080
+#   bind: 192.168.1.1
+    backlog: 10
+    stopTimeout: 1
+    executor: ${pool}
+    handlers: ${handler.resource}, ${handler.health}, ${handler.sys}, ${handler.rest}, ${handler.chart}, ${handler.uploader}, ${handler.demo}
+#    ssl:
+#      file:       ks
+#      password:   12345
+#      clientAuth: false
+
+handler:
+  resource:
+    class:    net.tiny.ws.ResourceHttpHandler
+    cache:    100
+    internal: false
+    path:     /
+    paths:    /:/opt/workspace/feature-platform/src/main/resources/home/
+    filters:  ${filter.logger}, ${filter.cors}
+#
+  health:
+    class:   net.tiny.ws.VoidHttpHandler
+    path:    /health
+    filters: ${filter.logger}
+#
+  sys:
+    class:   net.tiny.ws.ControllableHandler
+    path:    /sys
+    auth:    ${auth.simple}
+    filters: ${filter.logger}
+#
+  rest:
+    class:       net.tiny.ws.rs.RestfulHttpHandler
+    path:        /v1/api
+    filters:     ${filter.logger}
+    application: ${rest.application}
+#    listener:    ${rest.monitor}
+  chart:
+    class:       net.tiny.feature.svg.ScoreChartService
+    path:        /v1/chart/svg
+    filters:     ${filter.logger}
+    maxAge:      0
+#
+  uploader:
+    class:       net.tiny.feature.service.ResumesUploadHandler
+    path:        /v1/resume/upload
+    filters:     ${filter.logger}
+#
+  demo:
+    class:   net.tiny.feature.demo.UsersService
+    path:    /v1/demo/users
+    auth:    ${auth.server}
+    filters: ${filter.logger}
+#
+filter:
+   logger:
+     class: net.tiny.ws.AccessLogger
+     out:   /opt/demo/log/access.log
+   cors:
+     class: net.tiny.ws.CorsResponseFilter
+   snap:
+     class: net.tiny.ws.SnapFilter
+#
+auth:
+#
+  simple:
+    class:    net.tiny.ws.auth.SimpleAuthenticator
+    token:    DES:CAhQn4bV:HIOsSQIg
+    encode:   true
+    username: paas
+# 'password'
+    password: Piz5wX49L4MS4SYsGwEMNw==
+  server:
+     class:   net.tiny.ws.auth.ServerAuthenticator
+     service: ${service.account}
+#
+service:
+  account:
+    class: net.tiny.ws.auth.AccountService
+    path:  /opt/workspace/feature-platform/src/test/resources/jaas/passwd
+
+#
+server:
+  repository:
+    class:          net.tiny.ws.ServerRepository
+    sessionTimeout: 30000
+#
+rest:
+  application:
+    class:   net.tiny.ws.rs.RestApplication
+    pattern: net.tiny.feature.*, !java.*, !com.sun.*
+#   loggingLevel: info
+  service:
+    class:   net.tiny.ws.rs.RestServiceLocator
+#   listener: ${rest.monitor}
+#  monitor:
+#    class: net.tiny.ws.rs.RestServiceLocator$RestServiceMonitor
+#
+vcap:
+  alias: vcap.services.ups-tiny.credentials
+#datasource:
+#  global:
+#    username: ${${vcap.alias}.cf.username}
+#    password: ${${vcap.alias}.cf.password}

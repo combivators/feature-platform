@@ -1,8 +1,11 @@
 logging:
+  handler:
+    output: none
   level:
-    org.apache:  OFF
+    javax.xml.bind: WARNING
+    com.sun:     WARNING
     sun.net:     WARNING
-    com.sun.net: CONFIG
+    org.apache:  OFF
     net.tiny:    FINE
 
 #
@@ -24,7 +27,7 @@ launcher:
     backlog: 10
     stopTimeout: 1
     executor: ${pool}
-    handlers: ${handler.resource}, ${handler.health}, ${handler.sys}, ${handler.rest}, ${handler.chart}, ${handler.demo}
+    handlers: ${handler.resource}, ${handler.health}, ${handler.sys}, ${handler.rest}, ${handler.uploader}, ${handler.chart}, ${handler.fa}, ${handler.demo}
 #    ssl:
 #      file:       ks
 #      password:   12345
@@ -32,17 +35,17 @@ launcher:
 
 handler:
   resource:
-    class:    net.tiny.ws.ResourceHttpHandler
-    cache:    100
-    internal: true
-    path:     /
-    paths:    /:home
-    filters:  ${filter.logger}, ${filter.cors}
+    class:     net.tiny.ws.ResourceHttpHandler
+    cacheSize: 100
+    internal:  true
+    path:      /
+    paths:     /:home
+    filters:   ${filter.logger}, ${filter.cors}
 #
   health:
     class:   net.tiny.ws.VoidHttpHandler
     path:    /health
-    filters: ${filter.logger}, ${filter.snap}
+    filters: ${filter.logger}
 #
   sys:
     class:   net.tiny.ws.ControllableHandler
@@ -55,12 +58,21 @@ handler:
     path:        /v1/api
     filters:     ${filter.logger}
     application: ${rest.application}
-#    listener:    ${rest.monitor}
+    listener:    ${rest.monitor}
   chart:
     class:       net.tiny.feature.svg.ScoreChartService
-    path:        /v1/chart/svg
+    path:        /v1/chart
     filters:     ${filter.logger}
-
+    maxAge:      0
+  fa:
+    class:       net.tiny.feature.svg.BrandImageService
+    path:        /v1/svg
+    filters:     ${filter.logger}
+#
+  uploader:
+    class:       net.tiny.feature.service.ResumesUploadHandler
+    path:        /v1/resume/upload
+    filters:     ${filter.logger}
 #
   demo:
     class:   net.tiny.feature.demo.UsersService
@@ -72,8 +84,6 @@ filter:
    logger:
      class: net.tiny.ws.AccessLogger
      out:   stdout
-   params:
-     class: net.tiny.ws.ParameterFilter
    cors:
      class: net.tiny.ws.CorsResponseFilter
    snap:
@@ -95,8 +105,7 @@ auth:
 service:
   account:
     class: net.tiny.ws.auth.AccountService
-    path:  jaas/passwd
-
+    path:  src/test/resources/jaas/passwd
 
 #
 server:
@@ -107,13 +116,14 @@ server:
 rest:
   application:
     class:   net.tiny.ws.rs.RestApplication
-    pattern: net.tiny.feature.*, !java.*, !com.sun.*
-#   loggingLevel: info
+    pattern: net.tiny.message.*, net.tiny.feature.*
+    jars:    .*/classes/, .*/feature-.*[.]jar, .*/tiny-.*[.]jar, !.*/tiny-dic.*[.]jar
+    loggingLevel: info
   service:
     class:   net.tiny.ws.rs.RestServiceLocator
-#   listener: ${rest.monitor}
-#  monitor:
-#    class: net.tiny.ws.rs.RestServiceLocator$RestServiceMonitor
+    listener: ${rest.monitor}
+  monitor:
+    class: net.tiny.ws.rs.RestServiceLocator$RestServiceMonitor
 #
 vcap:
   alias: vcap.services.ups-tiny.credentials

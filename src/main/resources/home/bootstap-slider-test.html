@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstap slider sample project</title>
+
+        <!-- Bootstrap -->
+  <link href="/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+        <div class="container">
+            <h1>Bootstap Slider Sample Project</h1>
+            <p>This is a sample project for bootstrap slider</p>
+
+            <input type="text" id="slider-input" class="slider" value="1000" />
+        </div>
+
+</body>
+<script src="/jquery/jquery-3.4.1.min.js"></script>
+<script src="/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+<script src="/bootstrap-slider/10.6.2/bootstrap-slider.js "></script>
+<script>
+    $(document).ready(function () {
+        var mySlider = $("#slider-input").slider({
+            min:0,
+            max: 4200,
+            value:1000,
+            step:1000
+        });
+    });
+</script>
+</html>

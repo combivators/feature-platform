@@ -1,10 +1,11 @@
 package net.tiny.feature.matching;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Enumeration;
 import java.util.concurrent.Future;
 import java.util.logging.LogManager;
 
@@ -13,10 +14,9 @@ import org.junit.jupiter.api.Test;
 
 import net.tiny.boot.ApplicationContext;
 import net.tiny.boot.Main;
-import net.tiny.feature.model.Entry;
-import net.tiny.feature.model.Settings;
+import net.tiny.feature.matching.api.Entry;
+import net.tiny.feature.matching.api.Settings;
 import net.tiny.service.ServiceContext;
-import net.tiny.service.ServiceLocator;
 import net.tiny.ws.Launcher;
 import net.tiny.ws.rs.client.RestClient;
 
@@ -38,9 +38,9 @@ public class MatchingServiceTest {
         ApplicationContext context = new Main(args).run(false);
         assertEquals("test", context.getProfile());
 
-        ServiceContext locator = ServiceLocator.getInstance();
+        ServiceContext locator = context.getBean("rest.service", ServiceContext.class);
+        assertNotNull(locator);
         Launcher launcher = context.getBootBean(Launcher.class);
-        launcher = locator.lookup("launcher", Launcher.class);
         assertNotNull(launcher);
         Thread.sleep(1000L);
         assertTrue(launcher.isStarting());
@@ -50,14 +50,14 @@ public class MatchingServiceTest {
                 .build();
 
 
-        RestClient.Response response = client.doGet(new URL("http://localhost:8080/v1/api/match/1"));
+        RestClient.Response response = client.doGet(new URL("http://localhost:8080/v1/api/match/query/1"));
         assertEquals(response.getStatus(), HttpURLConnection.HTTP_OK);
         Settings settings = response.readEntity(Settings.class);
         assertNotNull(settings);
         //assertEquals(1, user.id);
         response.close();
 
-        response = client.doPost(new URL("http://localhost:8080/v1/api/edit/1"), new Entry());
+        response = client.doPost(new URL("http://localhost:8080/v1/api/match/edit/1"), new Entry());
         settings = response.readEntity(Settings.class);
         assertNotNull(settings);
         response.close();
