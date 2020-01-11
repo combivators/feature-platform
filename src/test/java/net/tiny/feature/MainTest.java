@@ -46,11 +46,10 @@ public class MainTest {
         ApplicationContext context = new Main(args).run(false);
         assertEquals("test", context.getProfile());
 
-        ServiceContext serviceContext = context.getBean("service", ServiceContext.class);
-        assertNotNull(serviceContext);
-        assertNotNull(serviceContext.lookup("launcher", Launcher.class));
+        ServiceContext locator = context.getBean("rest.service", ServiceContext.class);
+        assertNotNull(locator);
         Launcher launcher = context.getBootBean(Launcher.class);
-
+        launcher = locator.lookup("launcher", Launcher.class);
         assertNotNull(launcher);
         Thread.sleep(1500L);
         //assertTrue(launcher.isStarting());
@@ -58,7 +57,7 @@ public class MainTest {
 
         RestClient client = new RestClient.Builder()
                 .build();
-        RestClient.Response response = client.doGet(new URL("http://localhost:8080/example1.html"));
+        RestClient.Response response = client.doGet(new URL("http://localhost:8080/icon/favicon.ico"));
         assertEquals(response.getStatus(), HttpURLConnection.HTTP_OK);
         assertTrue(response.getContentLength() > 1);
         response.close();

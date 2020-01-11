@@ -14,8 +14,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import net.tiny.feature.demo.Users;
-import net.tiny.feature.model.Entry;
-import net.tiny.feature.model.Settings;
+import net.tiny.feature.matching.api.Entry;
+import net.tiny.feature.matching.api.Settings;
 
 //TODO This is a RESTful sample
 @Path("/v1/api/match")

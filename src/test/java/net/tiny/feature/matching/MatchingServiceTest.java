@@ -1,6 +1,8 @@
 package net.tiny.feature.matching;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -12,9 +14,9 @@ import org.junit.jupiter.api.Test;
 
 import net.tiny.boot.ApplicationContext;
 import net.tiny.boot.Main;
+import net.tiny.feature.matching.api.Entry;
+import net.tiny.feature.matching.api.Settings;
 import net.tiny.service.ServiceContext;
-import net.tiny.feature.model.Entry;
-import net.tiny.feature.model.Settings;
 import net.tiny.ws.Launcher;
 import net.tiny.ws.rs.client.RestClient;
 
@@ -36,11 +38,9 @@ public class MatchingServiceTest {
         ApplicationContext context = new Main(args).run(false);
         assertEquals("test", context.getProfile());
 
-        ServiceContext serviceContext = context.getBean("service", ServiceContext.class);
-        assertNotNull(serviceContext);
-        assertNotNull(serviceContext.lookup("launcher", Launcher.class));
+        ServiceContext locator = context.getBean("rest.service", ServiceContext.class);
+        assertNotNull(locator);
         Launcher launcher = context.getBootBean(Launcher.class);
-
         assertNotNull(launcher);
         Thread.sleep(1000L);
         assertTrue(launcher.isStarting());

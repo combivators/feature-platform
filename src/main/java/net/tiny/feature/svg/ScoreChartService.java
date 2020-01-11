@@ -1,6 +1,7 @@
 package net.tiny.feature.svg;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.nio.ByteBuffer;
 import java.util.Date;
@@ -17,15 +18,17 @@ import net.tiny.ws.auth.Codec;
 /**
  *
  * 输出SVG格式的评价结果雷达图
- *
+ * API: /v1/chart/{id}
  */
-//API: /v1/chart/svg/{id}
 public class ScoreChartService extends BaseWebService {
     //TODO When resize to re-calculate point
     private final String template;
     private String width  = "25cm";
     private String height = "20cm";
-    private String[] colors = {"#37a", "#f73", "#7a3", "#a37"};
+    // Line Color: LimeGreen, RoyalBlue, Gold, Crimson
+    private String[] colors = {"#32CD32", "#4169E1", "#FFD700", "#DC143C"};
+    //private String[] colors = {"#093", "#069", "#F60", "#C30"};
+    //private String[] colors = {"#777777", "#777777", "#777777", "#777777"};
     private float radius = 300.0f; //半径
     private float rate   = 0.01f;  //倍率
     private long maxAge  = 86400L; //1 day
@@ -46,8 +49,8 @@ public class ScoreChartService extends BaseWebService {
     @Override
     protected void execute(HTTP_METHOD method, HttpExchange he) throws IOException {
         final RequestHelper request = HttpHandlerHelper.getRequestHelper(he);
-        final ResponseHeaderHelper header = HttpHandlerHelper.getHeaderHelper(he);
         final String[] ids = request.getAllParameters();
+        final ResponseHeaderHelper header = HttpHandlerHelper.getHeaderHelper(he);
         try {
             byte[] svg = generateChart(ids);
             header.setContentType(MIME_TYPE.SVG);
@@ -55,7 +58,9 @@ public class ScoreChartService extends BaseWebService {
             header.set("Server", DEFALUT_SERVER_NAME);
             header.set("Connection", "Keep-Alive");
             header.set("Keep-Alive", "timeout=10, max=1000");
-            header.set("Cache-Control", "max-age=" + maxAge); //"max-age=0" 86400:1 day
+            if (maxAge > 0L) {
+              header.set("Cache-Control", "max-age=" + maxAge); //"max-age=0" 86400:1 day
+            }
             header.setContentLength(svg.length);
             he.sendResponseHeaders(HttpURLConnection.HTTP_OK, svg.length);
             he.getResponseBody().write(svg);
@@ -72,10 +77,11 @@ public class ScoreChartService extends BaseWebService {
         for (int i=0; i<size; i++) {
             scores[i] = toScoresById(ids[i]);
         }
-        return String.format(template, width, height,
+        final String res = String.format(template, width, height,
                 colors[0], colors[1], colors[2], colors[3],
                 generatePolygons(scores),
-                generateLabel(size)).getBytes();
+                generateLabel(size));
+        return res.getBytes();
     }
 
     // Convert id 'Cw...' to value array.

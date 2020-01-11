@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!-- https://bootstrapious.com/tutorial/sidebar/index4.html -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <link rel="shortcut icon" type="image/png" href="images/logo.png">
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="fontawesome-free-5.11.2-web/css/all.min.css" rel="stylesheet" type="text/css" />
+  <!-- Custom styles for this template -->
+  <link href="css/sidebar.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3><img src="images/logo.png" width="36" height="36" class="d-inline-block align-top mr-1" alt="Combivators">Combivators</h3>
+          <strong><img src="images/logo.png" width="36" height="36" class="d-inline-block align-top mr-1" alt="Combivators"></strong>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#dashboardSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-chart-line fa-lg"></i><span class="d-none d-md-inline">Dashboard</span>
+                </a>
+                <ul class="collapse list-unstyled" id="dashboardSubmenu">
+                    <li>
+                        <a href="#"><i class="fas fa-chart-area"></i><span class="d-none d-md-inline">Area</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-chart-bar"></i><span class="d-none d-md-inline">Bar</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-chart-pie"></i><span class="d-none d-md-inline">Pie</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-copy fa-lg"></i><span class="d-none d-md-inline">Create</span>
+                 </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#"><i class="fas fa-folder-plus"></i><span class="d-none d-md-inline">Offer</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-user-plus"></i><span class="d-none d-md-inline">Proposal</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="far fa-calendar-plus"></i><span class="d-none d-md-inline">Task</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fas fa-tasks fa-lg"></i><span class="d-none d-md-inline">Overview</span></a></li>
+            <li><a href="#"><i class="fas fa-calendar-check fa-lg"></i><span class="d-none d-md-inline">Events</span></a></li>
+            <li><a href="#"><i class="fas fa-star fa-lg"></i><span class="d-none d-md-inline">Favorite</span></a></li>
+            <li><a href="#"><i class="fas fa-sliders-h fa-lg"></i><span class="d-none d-md-inline">Setting</span></a></li>
+            <li><a href="#"><i class="fas fa-question fa-lg"></i><span class="d-none d-md-inline">FAQ</span></a></li>
+            <li><a href="#"><i class="fas fa-paper-plane fa-lg"></i><span class="d-none d-md-inline">Contact</span></a></li>
+            <li><a href="#"><i class="fas fa-briefcase fa-lg"></i><span class="d-none d-md-inline">About</span></a></li>
+
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+              &copy; 2019 Combivators Inc.
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-indent fa-2x"></i><!-- Show/Hide side bar -->
+                </button>
+                <button class="btn btn-info d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify fa-2x"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="input-group col-md-4">
+                        <input id="search-input" class="form-control py-2 border-right-0 border" type="search" placeholder="Search...">
+                        <span class="input-group-append">
+                            <button class="btn btn-info border-left-0 border" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#"><i class="fas fa-home fa-2x"></i><span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active dropdown">
+                          <button id="navbarHelpDropdown" role="button" type="button" class="btn dropdown btn-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-question-circle fa-2x"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarHelpDropdown">
+                              <div>Help</div>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Support</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Feedback</a>
+                          </div>
+                        </li>
+                        <li class="nav-item active dropdown">
+                          <button id="navbarMessageDropdown" role="button" type="button" class="btn dropdown btn-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa-stack has-badge" data-count="+">
+                              <i class="fa fa-envelope fa-stack-2x fa-inverse"></i>
+                            </span>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarHelpDropdown">
+                              <div>Messages(10)</div>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">From Lili</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">From Hoge</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">From Fuga</a>
+                          </div>
+                        </li>
+                        <li class="nav-item active dropdown">
+                          <button id="navbarTaskDropdown" role="button" type="button" class="btn dropdown btn-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa-stack has-badge" data-count="2">
+                              <i class="fa fa-bell fa-stack-2x fa-inverse"></i>
+                            </span>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarHelpDropdown">
+                              <div>Tasks(10)</div>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">11:30 Meeting</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">15:00 Report</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">19:00 Guest</a>
+                          </div>
+                        </li>
+                        <li class="nav-item active dropdown">
+                          <button id="navbarDropdown" type="button" class="btn dropdown btn-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             <i class="fas fa-user-circle fa-2x"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h2>Bootstrap4 Collapsible Sidebar</h2>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 id="tables">Tables</h1>
+        </div>
+
+        <div class="bs-component">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">名前</th>
+                <th scope="col">誕生日</th>
+                <th scope="col">血液型</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-active">
+                <th scope="row">Active</th>
+                <td>高坂穂乃果</td>
+                <td>8月3日(獅子座)</td>
+                <td>O型</td>
+              </tr>
+              <tr>
+                <th scope="row">Default</th>
+                <td>東條希</td>
+                <td>6月9日(双子座)</td>
+                <td>O型</td>
+              </tr>
+              <tr class="table-primary">
+                <th scope="row">Primary</th>
+                <td>園田海未</td>
+                <td>3月15日(魚座)</td>
+                <td>A型</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="row">Secondary</th>
+                <td>南ことり</td>
+                <td>9月12日(乙女座)</td>
+                <td>O型</td>
+              </tr>
+              <tr class="table-success">
+                <th scope="row">Success</th>
+                <td>小泉花陽</td>
+                <td>1月17日(山羊座)</td>
+                <td>B型</td>
+              </tr>
+              <tr class="table-danger">
+                <th scope="row">Danger</th>
+                <td>西木野真姫</td>
+                <td>4月19日(牡羊座)</td>
+                <td>AB型</td>
+              </tr>
+              <tr class="table-warning">
+                <th scope="row">Warning</th>
+                <td>星空凛</td>
+                <td>11月1日(蠍座)</td>
+                <td>A型</td>
+              </tr>
+              <tr class="table-info">
+                <th scope="row">Info</th>
+                <td>絢瀬絵里</td>
+                <td>10月21日(天秤座)</td>
+                <td>B型</td>
+              </tr>
+              <tr class="table-light">
+                <th scope="row">Light</th>
+                <td>矢澤にこ</td>
+                <td>7月22日(蟹座)</td>
+                <td>A型</td>
+              </tr>
+              <tr class="table-dark">
+                <th scope="row">Dark</th>
+                <td>アルパカ</td>
+                <td>?月?日(？座)</td>
+                <td>?型</td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- /example -->
+      </div>
+    </div>
+
+        <div class="line"></div>
+        <h2>Lorem Ipsum Dolor</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+</div>
+  <!-- /#wrapper -->
+</body>
+<!-- Bootstrap core JavaScript -->
+<script src="jquery/jquery-3.4.1.min.js"></script>
+<script src="popper.js/1.16.0/popper.min.js"></script>
+<script src="bootstrap-4.3.1/js/bootstrap.min.js"></script>
+<!-- Menu Toggle Script -->
+<script>
+$(document).ready(function () {
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+});
+</script>
+
+</html>

@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import net.tiny.feature.demo.Users;
-import net.tiny.feature.model.Entry;
+import net.tiny.feature.matching.api.Entry;
 
 public class EntryGenerator {
 
